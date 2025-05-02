@@ -1,12 +1,10 @@
-import { useState } from 'react'
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-    </>
-  )
+    <Router>
+      <Header />
+    </Router>
+  );
 }
-
-export default App
