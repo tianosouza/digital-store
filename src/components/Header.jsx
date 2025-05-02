@@ -25,22 +25,22 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-grayscale-light-2">
               <Search size={18} />
             </div>
           </div>
           
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-700 hover:text-pink-600 transition text-sm underline">
+            <a href="#" className="text-gray-700 hover:text-primary-color transition text-sm underline">
               Cadastre-se
             </a>
-            <button className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded text-sm">
+            <button className="bg-primary-color hover:bg-secondary-color text-white px-4 py-2 rounded text-sm">
               Entrar
             </button>
             <div className="relative">
-              <button className="text-gray-700 hover:text-pink-600 transition">
+              <button className="text-gray-700 hover:text-primary-color transition">
                 <ShoppingCart size={22} />
-                <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-primary-color text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   2
                 </span>
               </button>
@@ -50,16 +50,16 @@ export default function Header() {
         
         <div className="mt-4">
           <nav className="flex">
-            <a href="#" className="mr-6 text-sm border-b-2 border-pink-600 font-medium text-pink-600 pb-2">
+            <a href="#" className="mr-6 text-sm border-b-2 border-primary-color font-medium text-primary-color pb-2">
               Home
             </a>
-            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-pink-600 transition pb-2">
+            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
               Produtos
             </a>
-            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-pink-600 transition pb-2">
+            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
               Categorias
             </a>
-            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-pink-600 transition pb-2">
+            <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
               Meus Pedidos
             </a>
           </nav>
