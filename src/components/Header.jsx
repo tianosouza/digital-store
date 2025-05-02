@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Search, ShoppingCart } from 'lucide-react';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import logo from '../assets/images/logo-header.svg';
 
 export default function Header() {
@@ -25,8 +26,8 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-grayscale-light-2">
-              <Search size={18} />
+            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-light-gray-2-color">
+              <SearchOutlinedIcon />
             </div>
           </div>
           
@@ -39,7 +40,7 @@ export default function Header() {
             </button>
             <div className="relative">
               <button className="text-gray-700 hover:text-primary-color transition">
-                <ShoppingCart size={22} />
+                <ShoppingCartOutlinedIcon />
                 <span className="absolute -top-2 -right-2 bg-primary-color text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   2
                 </span>
