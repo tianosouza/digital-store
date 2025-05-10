@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -9,25 +10,28 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkIfMobile();
 
     window.addEventListener('resize', checkIfMobile);
-    
+
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <div className="w-full bg-white shadow-sm">
+    <div className="w-full p-4 bg-white shadow-sm">
       {isMobile ? (
         <>
           <div className="flex items-center justify-between py-4 px-4">
-            <button 
+            <button
               className="text-gray-800"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -43,9 +47,9 @@ export default function Header() {
                 />
               </div>
             </div>
-            
+
             <div className="flex items-center">
-              <button 
+              <button
                 className="mr-4 text-gray-700"
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
               >
@@ -92,7 +96,7 @@ export default function Header() {
                 />
               </div>
             </div>
-            
+
             <div className="relative flex-1 max-w-lg mx-6">
               <input
                 type="text"
@@ -105,7 +109,7 @@ export default function Header() {
                 <SearchOutlinedIcon />
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <a href="#" className="text-gray-700 hover:text-primary-color transition text-sm underline">
                 Cadastre-se
@@ -123,50 +127,43 @@ export default function Header() {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-4">
             <nav className="flex">
-              <a href="#" className="mr-6 text-sm border-b-2 border-primary-color font-medium text-primary-color pb-2">
+              <Link
+                to="/"
+                className={`mr-6 text-sm pb-2 font-medium transition ${
+                  isActive('/') ? 'border-b-2 border-primary-color text-primary-color' : 'text-gray-700 hover:text-primary-color'
+                }`}
+              >
                 Home
-              </a>
-              <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
+              </Link>
+              <Link
+                to="/produtos"
+                className={`mr-6 text-sm pb-2 font-medium transition ${
+                  isActive('/produtos') ? 'border-b-2 border-primary-color text-primary-color' : 'text-gray-700 hover:text-primary-color'
+                }`}
+              >
                 Produtos
-              </a>
-              <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
+              </Link>
+              <Link
+                to="/categorias"
+                className={`mr-6 text-sm pb-2 font-medium transition ${
+                  isActive('/categorias') ? 'border-b-2 border-primary-color text-primary-color' : 'text-gray-700 hover:text-primary-color'
+                }`}
+              >
                 Categorias
-              </a>
-              <a href="#" className="mr-6 text-sm text-gray-700 hover:text-primary-color transition pb-2">
+              </Link>
+              <Link
+                to="/meus-pedidos"
+                className={`text-sm pb-2 font-medium transition ${
+                  isActive('/meus-pedidos') ? 'border-b-2 border-primary-color text-primary-color' : 'text-gray-700 hover:text-primary-color'
+                }`}
+              >
                 Meus Pedidos
-              </a>
+              </Link>
             </nav>
           </div>
-        </div>
-      )}
-      
-      {isMobile && isMenuOpen && (
-        <div className="py-2 px-4 border-t border-gray-200">
-          <nav className="flex flex-col space-y-3">
-            <a href="#" className="text-sm font-medium text-primary-color">
-              Home
-            </a>
-            <a href="#" className="text-sm text-gray-700">
-              Produtos
-            </a>
-            <a href="#" className="text-sm text-gray-700">
-              Categorias
-            </a>
-            <a href="#" className="text-sm text-gray-700">
-              Meus Pedidos
-            </a>
-            <div className="pt-2 border-t border-gray-200">
-              <a href="#" className="text-sm text-gray-700 block mb-2">
-                Cadastre-se
-              </a>
-              <button className="bg-primary-color hover:bg-secondary-color text-white px-4 py-2 rounded text-sm w-full">
-                Entrar
-              </button>
-            </div>
-          </nav>
         </div>
       )}
     </div>
