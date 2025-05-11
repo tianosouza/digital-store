@@ -1,6 +1,6 @@
-export default function ButtonComponent(name, style) {
+export default function ButtonComponent(name) {
   return (
-    <button className={`${style} bg-info`}>
+    <button className="bg-info-color">
      <span>{name}</span>
     </button>
   )
