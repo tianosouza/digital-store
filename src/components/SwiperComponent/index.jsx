@@ -13,7 +13,6 @@ export default function SwiperComponent() {
       src: tenis,
       alt: "White and red Nike Air Force 1 sneaker",
     },
-    // Added more images to make the swiper functional
     {
       src: tenis,
       alt: "White and red Nike Air Force 1 sneaker - view 2",
@@ -65,25 +64,6 @@ export default function SwiperComponent() {
             </div>
           ))}
         </div>
-        
-        {images.length > 1 && (
-          <>
-            <button 
-              onClick={() => goToSlide((currentIndex - 1 + images.length) % images.length)}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full"
-              aria-label="Previous slide"
-            >
-              ←
-            </button>
-            <button 
-              onClick={() => goToSlide((currentIndex + 1) % images.length)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 p-2 rounded-full"
-              aria-label="Next slide"
-            >
-              →
-            </button>
-          </>
-        )}
       </div>
 
       {images.length > 1 && (

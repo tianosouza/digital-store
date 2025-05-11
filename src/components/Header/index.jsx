@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import logo from '../assets/images/logo-header.svg';
+import logo from '../../assets/images/logo-header.svg';
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');

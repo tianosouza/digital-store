@@ -1,7 +1,7 @@
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import logo from '../assets/images/logo-footer.svg';
+import logo from '../../assets/images/logo-footer.svg';
 
 export default function Footer() {
   return (

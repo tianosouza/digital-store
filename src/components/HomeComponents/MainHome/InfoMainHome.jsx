@@ -13,7 +13,7 @@ export default function InfoMainHome() {
             className="w-20 mt-14"
           />
         </span>
-        <p className="text-dark-gray-2-color w-[24rem]">
+        <p className="text-dark-gray-2-color w-[24rem] mt-3">
           Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.
         </p>
       </div>
